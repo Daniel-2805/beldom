@@ -1,0 +1,8 @@
+<h1>Los servicios</h1>
+<% @services.each do |service| %>
+  <%= link_to service_path(service) do %>
+ <h2><%= service.title %></h2>
+  <%= service.description %>
+  <%= service.price %>
+  <% end %>
+<% end %>
