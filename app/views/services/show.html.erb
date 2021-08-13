@@ -1,0 +1,6 @@
+<h1><%= @service.title %></h1>
+<h2><%= @service.description %> </h2>
+
+<%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-primary" %>
+
+<%= link_to 'Eliminar servicio', service_path, method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-danger"  %>
