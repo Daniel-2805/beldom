@@ -4,3 +4,11 @@
 <%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-primary" %>
 
 <%= link_to 'Eliminar servicio', service_path, method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-danger"  %>
+
+
+<%= simple_form_for [@service, @booking] do |f| %>
+<%= f.input :start_date %>
+<%= f.input :end_date %>
+<%= f.submit %>
+<% end %>
+

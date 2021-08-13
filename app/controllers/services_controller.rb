@@ -6,7 +6,9 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def new
     @service = Service.new
