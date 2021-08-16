@@ -1,8 +1,31 @@
-<h1>Los servicios</h1>
-<% @services.each do |service| %>
-  <%= link_to service_path(service) do %>
- <h2><%= service.title %></h2>
-  <%= service.description %>
-  <%= service.price %>
-  <% end %>
-<% end %>
+<h1>Nuestros Servicios</h1>
+<br>
+<div class="container">
+  <div class="row">
+    <% @services.each do |service| %>
+      <div class="col-sm-6">
+        <div class="card-producto p-3 mb-3">
+          <div>
+            <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" />
+          </div>
+          <div class="card-producto-infos">
+            <h2><%= link_to service.title,  service_path(@services)%></h2>
+            <p><%= service.description %></p>
+            <div class="d-flex justify-content-between">
+              <div>
+                <p>  Categoria: <strong><%= service.category %></strong></p>
+              </div>
+              <div>
+                <p>  Precio: $ <%= service.price %></p>
+              </div>
+            </div>
+                
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>  
+
+
+ <%= link_to "Requieres un nuevo servicio", new_service_path %>
