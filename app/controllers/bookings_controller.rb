@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
 
-  def show; end
+  def show
+    @review = Review.new
+  end
 
   def create
     @service = Service.find(params[:service_id])

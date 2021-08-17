@@ -1,0 +1,25 @@
+.comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.2);
+}
+
+.comment .comment-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.comment p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.comment small {
+  color: #999999;
+  font-weight: lighter;
+  font-style: italic;
+}
