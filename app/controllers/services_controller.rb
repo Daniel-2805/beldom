@@ -48,4 +48,16 @@ class ServicesController < ApplicationController
   def set_service
     @service = Service.find(params[:id])
   end
+
+  def reviews_of_booking
+    @bookings_selects = []
+    @reviews = Review.all
+    @bookings = Booking.all
+    @services = Service.all
+    @bookings.each do |booking|
+      if booking.service_id == Service.find(params[:id])
+        @bookings_selects << booking  
+      end  
+    end  
+  end  
 end
