@@ -1,7 +1,7 @@
 <div class="container"> 
   <h1><%= @service.title %></h1>
   <h2><%= @service.description %> </h2>
-
+   <%= cl_image_tag @service.photo.key, height: 300, width: 400, crop: :fill %>
   <% if policy(@service).edit? %>
     <%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-primary" %>
   <% end %>
