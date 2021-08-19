@@ -1,7 +1,7 @@
 <h1>Reserva</h1>
 <p><strong>Hora de entrada:</strong> <%= @booking.start_date.strftime("Dia: %m/%d/%Y hora: %I:%M%p") %></p>
 <p><strong>Hora de salida</strong> <%= @booking.end_date.strftime("Dia: %m/%d/%Y hora: %I:%M%p") %></p>
-
+<p><strong>Dirección</strong> <%= @booking.address_client %></p>
 <%= link_to 'Cancelar reserva', booking_path(@booking), method: :delete, data: { confirm: "Estas seguro que quieres cancelar la reserva?" }  %>
 
 <h1>Dejanos tus comentarios</h1>

@@ -1,26 +1,55 @@
 <div class="container"> 
-  <h1><%= @service.title %></h1>
-  <h2><%= @service.description %> </h2>
-
-  <%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-primary" %>
-
-  <%= link_to 'Eliminar servicio', service_path, method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-danger"  %>
-
-  <%= simple_form_for [@service, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-  <% end %>
-
-  <% @service.bookings.each do |booking| %>
-    <% booking.reviews.each do |review| %>
-      <div class="comment"> 
-        <i class="fas fa-user-circle fa-2x"></i>
-        <div class="comment-content">
-          <p><small><%= review.created_at.strftime("Commented on %d/%m/%Y at %I:%M%p") %></small></p>
-          <p><strong><%= review.content %></strong></p>
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <div class="justify-content-center">
+        <h3><center><%= @service.title %></center></h3>
+        <div class="p-3 bg-white rounded">      
+          <h6><%= @service.description %> </h6>
+        <div>  
+          <p> Su Precio es de: $ <strong><%= @service.price %></strong> y pertenece a la Categoria: <strong><%= @service.category %></strong> </p>
         </div>
       </div>
-    <% end %>
-  <% end %>
+      <br>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <%= link_to 'Volver', services_path, class: "btn btn-outline-secondary" %>
+        <%= link_to 'Editar', edit_service_path(@service),  class: "btn btn-outline-secondary  me-md-2" %>
+        <%= link_to 'Eliminar', service_path, method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary"  %>
+      </div>
+    </div> 
+    <div class="col-lg-9">
+      <div class="justify-content-center">
+        <br>
+        <h3><center>Realizar Reserva</center></h3>
+        <%= simple_form_for [@service, @booking] do |f| %>
+        <%= f.input :address_client %>
+        <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
+        <%= f.input :end_date, as: :string, input_html: { class: "datepicker" } %>
+                <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container"> 
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <div class="justify-content-center">
+        <br>
+        <h3><center>Comentarios</center></h3>
+        <% @service.bookings.each do |booking| %>
+          <% booking.reviews.each do |review| %>
+            <div class="comment"> 
+              <i class="fas fa-user-circle fa-2x"></i>
+              <div class="comment-content">
+                <p><small><%= review.created_at.strftime("Commented on %d/%m/%Y at %I:%M%p") %></small></p>
+                <p><strong><%= review.content %></strong></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
 </div>

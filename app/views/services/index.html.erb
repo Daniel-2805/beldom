@@ -9,17 +9,11 @@
             <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" />
           </div>
           <div class="card-producto-infos">
-            <h2><%= link_to service.title,  service_path(@services)%></h2>
+            <h2><%= link_to service.title,  service_path(service)%></h2>
             <p><%= service.description %></p>
-            <div class="d-flex justify-content-between">
-              <div>
-                <p>  Categoria: <strong><%= service.category %></strong></p>
-              </div>
-              <div>
-                <p>  Precio: $ <%= service.price %></p>
-              </div>
+            <div class="text-left">
+              <p>  Precio: $ <%= service.price %></p>
             </div>
-                
           </div>
         </div>
       </div>
