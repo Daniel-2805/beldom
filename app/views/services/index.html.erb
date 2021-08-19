@@ -12,6 +12,10 @@
           <div class="card-producto-infos">
             <h2><%= link_to service.title,  service_path(service)%></h2>
             <p><%= service.description %></p>
+<<<<<<< HEAD
+            <div class="text-left">
+              <p>  Precio: $ <%= service.price %></p>
+=======
             <div class="d-flex justify-content-between">
               <div>
                 <p>  Categoria: <strong><%= service.category %></strong></p>
@@ -19,8 +23,8 @@
               <div>
                 <p>  Precio: <strong>$ <%= service.price %></strong></p>
               </div>
+>>>>>>> master
             </div>
-                
           </div>
         </div>
       </div>
@@ -29,5 +33,9 @@
 </div>  
 
 
+<<<<<<< HEAD
+ <%= link_to "Requieres un nuevo servicio", new_service_path %>
+=======
 
  <%= link_to "Nuevo servicio", new_service_path %>
+>>>>>>> master
