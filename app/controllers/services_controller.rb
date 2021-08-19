@@ -7,7 +7,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+        @booking = Booking.new
   end
 
   def new
