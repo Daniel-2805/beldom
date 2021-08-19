@@ -1,13 +1,17 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
+      <div class=" p-5 bg-white rounded ">
       <%= simple_form_for @service do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :category %>
         <%= f.input :price %>
-        <%= f.submit %>
+        <%= f.submit "Crear servicio", class: "btn btn-primary btn-block" %>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+<%= link_to "Volver", services_path %>

@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   def index
-    @services = Service.all
+    @services = policy_scope(Service).order(created_at: :desc)
   end
 
   def show
@@ -12,10 +12,12 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
+    authorize @service
   end
 
   def create
     @service = Service.new(service_params)
+    authorize @service
     @service.user = current_user
     if @service.save
       redirect_to services_path
@@ -47,17 +49,6 @@ class ServicesController < ApplicationController
 
   def set_service
     @service = Service.find(params[:id])
-  end
-
-  def reviews_of_booking
-    @bookings_selects = []
-    @reviews = Review.all
-    @bookings = Booking.all
-    @services = Service.all
-    @bookings.each do |booking|
-      if booking.service_id == Service.find(params[:id])
-        @bookings_selects << booking  
-      end  
-    end  
-  end  
+    authorize @service
+  end 
 end
