@@ -1,13 +1,14 @@
-<h1>Nuestros Servicios</h1>
-<br>
+
+
 <div class="container">
+  <h3>Nuestros Servicios</h3>
+  <br>
   <div class="row">
     <% @services.each do |service| %>
- 
-      <div class="col-sm-6">
-        <div class="card-producto p-3 mb-3">
-          <div>
-            <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" />
+       <div class="col-sm-6">
+        <div class="card-producto p-2 mb-3">
+          <div class="col-md-3">
+            <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
           </div>
           <div class="card-producto-infos">
             <h2><%= link_to service.title,  service_path(service)%></h2>
@@ -25,8 +26,12 @@
       </div>
     <% end %>
   </div>
-</div>  
+</div>
+<div class="container">
 
+  <div class="d-flex justify-content-start">
+  
+          <%= link_to 'Nuevo Servicio', new_service_path, class: "btn btn-outline-secondary" %>
 
-
- <%= link_to "Nuevo servicio", new_service_path %>
+  </div>
+</div>
