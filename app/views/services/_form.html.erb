@@ -7,6 +7,8 @@
         <%= f.input :description %>
         <%= f.input :category %>
         <%= f.input :price %>
+        <%= f.input :user_id, collection: @user, label_method: :email, value_method: :id, prompt: "Seleccionar un usuario" %>
+        
         <%= f.input :photo, as: :file %>
         <%= f.submit "Crear servicio", class: "btn btn-primary btn-block" %>
       <% end %>

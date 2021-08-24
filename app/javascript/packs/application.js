@@ -35,3 +35,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpickr();
 });
+
+import { initAutocomplete } from '../plugins/init_autocomplete';
+initAutocomplete();
