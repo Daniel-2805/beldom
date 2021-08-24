@@ -1,11 +1,18 @@
-
 <div class="container"> 
   <div class="row justify-content-center">
     <div class="col-md-7">
       <h3><center>Servicio de <%= @service.title %></center></h3>
-      <div class="p-3 bg-white rounded">      
-        <h6><%= @service.description %> </h6>
-        <h6> Su Precio es de: $ <strong><%= @service.price %></strong> y pertenece a la Categoria: <strong><%= @service.category %></strong> </h6>
+      <br>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <%= cl_image_tag @service.photo.key, height: 200, width: 200, crop: :fill %>
+        </div>
+        <div class="col-md-8">
+          <div class="p-3 bg-white rounded">      
+            <p><%= @service.description %> </p>
+            <h6>Precio: $ <strong><%= @service.price %></strong>  Rating: <strong></strong></strong><span class="fas fa-star"></span></strong><span class="fas fa-star"></span> </h6>
+          </div>
+        </div>
       </div>
       <br>
       <div class="d-flex justify-content-start">
@@ -18,45 +25,47 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-3">
-      <%= cl_image_tag @service.photo.key, height: 150, width: 250, crop: :fill %>
-    </div>
-    <br>
-  </div>
-</div>
-</div>
-<br>  <br>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <h3><center>Realizar Reserva</center></h3>
+      <br>
       <div class=" p-5 bg-white rounded "
-        <br>
+      <br>
         <%= simple_form_for [@service, @booking] do |f| %>
           <%= f.input :address_client %>
           <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
           <%= f.input :end_date, as: :string, input_html: { class: "datepicker" } %>
-          <%= f.submit %>
+          <%= f.submit "Reservar", class: "btn btn-primary btn-block mt-4" %>
         <% end %>
       </div>
-    </div>
-    <div class="col-md-6">
-        <h3><center>Comentarios</center></h3>
-        <br>
-        <% @service.bookings.each do |booking| %>
-          <% booking.reviews.each do |review| %>
-            <div class="comment"> 
-              <i class="fas fa-user-circle fa-2x"></i>
-              <div class="comment-content">
-                <p><small><%= review.created_at.strftime("Commented on %d/%m/%Y at %I:%M%p") %></small></p>
-                <p><strong><%= review.content %></strong></p>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-      <br>
     </div>
   </div>
 </div>
+
+  <br> 
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <h3><center>Comentarios</center></h3>
+      <br>
+      <% @service.bookings.each do |booking| %>
+        <% booking.reviews.each do |review| %>
+          <div class="comment"> 
+            <i class="fas fa-user-circle fa-2x"></i>
+            <div class="comment-content">
+              <p><small><%= review.created_at.strftime("Commented on %d/%m/%Y at %I:%M%p") %></small> --> Rating: <%= review.rating %></strong><span class="fas fa-star"></span></p>
+              <p><strong><%= review.content %></strong></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <br>
+  </div>
+</div>
+</div>
 <br>
+
+
+
+

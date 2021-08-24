@@ -1,8 +1,12 @@
+<div class="banner-services mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1583209814683-c023dd293cc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
+  <div class="container text-center">
+    <h1>Nuestros Servicios</h1>
+  </div>
+</div>
 
 
 <div class="container">
-  <h3>Nuestros Servicios</h3>
-  <br>
+
   <div class="row">
     <% @services.each do |service| %>
        <div class="col-sm-6">
@@ -12,10 +16,10 @@
           </div>
           <div class="card-producto-infos">
             <h2><%= link_to service.title,  service_path(service)%></h2>
-            <p><%= service.description %></p>
+            <p><%= service.description[0,159] + "..." %></p>
             <div class="d-flex justify-content-between">
               <div>
-                <p>  Categoria: <strong><%= service.category %></strong></p>
+                <p>  Rating: <strong> </strong><span class="fas fa-star"></span><span class="fas fa-star"></span></p>
               </div>
               <div>
                 <p>  Precio: <strong>$ <%= service.price %></strong></p>
@@ -28,10 +32,8 @@
   </div>
 </div>
 <div class="container">
-
   <div class="d-flex justify-content-start">
-  
-          <%= link_to 'Nuevo Servicio', new_service_path, class: "btn btn-outline-secondary" %>
-
+    <%= link_to 'Nuevo Servicio', new_service_path, class: "btn btn-outline-secondary" %>
   </div>
 </div>
+<br>
