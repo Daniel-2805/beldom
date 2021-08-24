@@ -1,0 +1,9 @@
+<div class="container"> 
+  <h1 style="font-family: 'Ubuntu Condensed', sans-serif;">Agenda de servicios</h1>
+  <% if current_user.permission_level == "owner" %>
+    <%= render "owner" %>
+  <% else %>
+    <%= render "buyer" %>
+  <% end %>
+</div>
+
