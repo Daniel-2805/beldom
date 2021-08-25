@@ -59,3 +59,64 @@ body{
 	border-radius: 20px;
 	box-shadow:2px 2px 2px 2px rgb(158, 157, 158);
 }
+
+.homepage-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 160px 0;
+
+}
+
+.homepage-form {
+  width: 450px;
+  border-radius: 18px;
+  margin-left: 100px;
+  opacity: 0.9;
+
+  h2 {
+    font-weight: bold;
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+    color: gray;
+  }
+}
+
+
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-category-1 {
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
