@@ -4,12 +4,10 @@
   </div>
 </div>
 
-
 <div class="container">
-
   <div class="row">
     <% @services.each do |service| %>
-       <div class="col-sm-6">
+       <div class="col-md-6">
         <div class="card-producto p-2 mb-3">
           <div class="col-md-3">
             <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
@@ -22,7 +20,7 @@
                 <p>  Rating: <strong> </strong><span class="fas fa-star"></span><span class="fas fa-star"></span></p>
               </div>
               <div>
-                <p>  Precio: <strong>$ <%= service.price %></strong></p>
+                <p>  Precio: <strong> <%= number_to_currency(service.price, strip_insignificant_zeros:true) %></strong></p>
               </div>
             </div>
           </div>
@@ -31,9 +29,3 @@
     <% end %>
   </div>
 </div>
-<div class="container">
-  <div class="d-flex justify-content-start">
-    <%= link_to 'Nuevo Servicio', new_service_path, class: "btn btn-outline-secondary" %>
-  </div>
-</div>
-<br>
