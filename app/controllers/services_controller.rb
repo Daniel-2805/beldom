@@ -1,9 +1,15 @@
 class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:new, :create, :edit]
 
   def index
     @services = policy_scope(Service).order(created_at: :desc)
+    if params["category"]
+      @services = policy_scope(Service.where(category: params["category"])).order(created_at: :desc)
+    else  
+      @services
+    end
   end
 
   def show
@@ -13,11 +19,9 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
     authorize @service
-    @user = User.where(permission_level: 1)
   end
 
   def create
-    @user = User.where(permission_level: 1)
     @service = Service.new(service_params)
     authorize @service
     if @service.save
@@ -39,7 +43,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    redirect_to services_path
+    redirect_to user_path(current_user)
   end
 
   private
@@ -52,4 +56,8 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     authorize @service
   end 
+
+  def set_user
+    @user = User.where(permission_level: 1)
+  end
 end

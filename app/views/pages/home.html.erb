@@ -29,10 +29,10 @@
   <h1 class="h1 font-weight-bold text-center py-5 mt-5 mb-5">BelDom</h1>
   <div class="home-container">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ead.unach.cl/wp-content/uploads/2020/07/salud-OMS-e1551914081412.jpg)">
-      Belleza
+      <%= link_to "Belleza", services_path(category: "Belleza") %>
     </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://definicion.mx/wp-content/uploads/2015/02/Belleza.jpg)">
-      Salud
+      <%= link_to "Salud", services_path(category: "Salud") %>
     </div>
   </div>
   <div class="text-center py-5 mt-5 mb-5">
