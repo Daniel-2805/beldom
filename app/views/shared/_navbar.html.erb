@@ -14,12 +14,11 @@
           <%= link_to "Inicio", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Servicio", services_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Sobre nosostros", "#", class: "nav-link" %>
+          <%= link_to "Nosotros", "#", class: "nav-link" %>
         </li> 
-  
+        <li class="nav-item active">
+          <%= link_to "Servicios", services_path, class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/karina0522/image/upload/v1629305895/avatar_jnehp7.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -30,16 +29,19 @@
         </li>
       <% else %>
         <li class="nav-item active">
+          <%= link_to "Nosotros", nosotros_path, class: "nav-link" %>
+        </li>
+<!--    <li class="nav-item active">    
           <%= link_to "Tienda", "#", class: "nav-link" %>
+        </li>  -->
+        <li class="nav-item active">
+          <%= link_to "Servicios", services_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Servicio", services_path, class: "nav-link" %>
+          <%= link_to  "Login", new_user_session_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Sobre nosostros", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Ingresar", new_user_session_path, class: "nav-link" %>
+         <%= image_tag "https://res.cloudinary.com/karina0522/image/upload/v1629305895/avatar_jnehp7.jpg",  class: "avatar dropdown-toggle", 'aria-expanded': false %>
         </li>
       <% end %>
     </ul>
