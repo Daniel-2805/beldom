@@ -12,9 +12,9 @@ class ServicePolicy < ApplicationPolicy
     true
   end
   def update?
-    record.user == user
+    user.permission_level == "admin"
   end
   def destroy?
-    record.user == user
+    user.permission_level == "admin"
   end
 end

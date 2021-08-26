@@ -22,7 +22,7 @@
           <%= link_to 'Editar', edit_service_path(@service), class: "btn btn-outline-secondary  me-md-2" %>
         <% end %>
         <% if policy(@service).destroy? %>
-          <%= link_to 'Eliminar', service_path, method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary" %>
+          <%= link_to 'Eliminar', service_path(@service), method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary"  %>
         <% end %>
       </div>
     </div>
