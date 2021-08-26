@@ -31,3 +31,32 @@
     </div>  
   </div>
 </div>
+<div class="container">
+  <div class="text-center">
+   <h2>Nuestros servicios</h2>
+  </div>
+  <div class="row">
+    <% @services.each do |service| %>
+ 
+      <div class="col-sm-6">
+        <div class="card-producto p-3 mb-3">
+          <div>
+            <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" />
+          </div>
+          <div class="card-producto-infos">
+            <h2><%= link_to service.title,  service_path(service)%></h2>
+            <p><%= service.description %></p>
+            <div class="d-flex justify-content-between">
+              <div>
+                <p>  Categoria: <strong><%= service.category %></strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="py-3 text-center">
+    <%= link_to "Ir a servicios", services_path, class:"btn btn-primary" %>
+  </div>
+</div>  
