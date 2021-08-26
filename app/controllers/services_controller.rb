@@ -13,12 +13,13 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
     authorize @service
+    @user = User.where(permission_level: 1)
   end
 
   def create
+    @user = User.where(permission_level: 1)
     @service = Service.new(service_params)
     authorize @service
-    @service.user = current_user
     if @service.save
       redirect_to services_path
     else
@@ -44,7 +45,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:title, :category, :description, :price, :photo)
+    params.require(:service).permit(:title, :category, :description, :price, :photo, :user_id)
   end
 
   def set_service
