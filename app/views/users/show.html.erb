@@ -1,7 +1,13 @@
-<div class="container"> 
-  <h1 style="font-family: 'Ubuntu Condensed', sans-serif;">Agenda de servicios</h1>
+<div class="container mb-5 pb-5"> 
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 style="font-family: 'Ubuntu Condensed', sans-serif;" class="mb-4">Agenda de servicios</h1>
+    <p><strong>Bienvenido:</strong> <%= @user.email %> </p>
+  </div>
+
   <% if current_user.permission_level == "owner" %>
     <%= render "owner" %>
+  <% elsif current_user.permission_level == "admin" %>
+    <%= render "admin" %>
   <% else %>
     <%= render "buyer" %>
   <% end %>
