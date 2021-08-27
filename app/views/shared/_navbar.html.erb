@@ -22,7 +22,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/karina0522/image/upload/v1629305895/avatar_jnehp7.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Menu", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Menu", usuario_path(current_user), class: "dropdown-item" %>
             <%= link_to "Carro de Compras", "#", class: "dropdown-item" %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

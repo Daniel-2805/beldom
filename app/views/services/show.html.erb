@@ -18,7 +18,6 @@
       <br>
       <div class="d-flex justify-content-start">
         <%= link_to 'Volver', services_path, class: "btn btn-outline-secondary" %>
-<<<<<<< HEAD
         <% if user_signed_in? %>
           <% if policy(@service).edit? %>
             <%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-outline-secondary  me-md-2" %>
@@ -26,13 +25,6 @@
           <% if policy(@service).destroy? %>
             <%= link_to 'Eliminar servicio', service_path(@service), method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary"  %>
           <% end %>
-=======
-        <% if policy(@service).edit? %>
-          <%= link_to 'Editar', edit_service_path(@service), class: "btn btn-outline-secondary  me-md-2" %>
-        <% end %>
-        <% if policy(@service).destroy? %>
-          <%= link_to 'Eliminar', service_path(@service), method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary"  %>
->>>>>>> master
         <% end %>
       </div>
     </div>
