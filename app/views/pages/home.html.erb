@@ -1,36 +1,44 @@
-<br><br><br>
-
-
-<div class="banner">
-   <h1>BelDom</h1> 
-</div>
-
-<div class="container-home">
-  <div class="d-flex justify-content-center">
-    <div class="row align-center">
-      <div class="col-6">
-        <div class="text-center">
-          <img src="https://ead.unach.cl/wp-content/uploads/2020/07/salud-OMS-e1551914081412.jpg" class="img-top" alt="..."> 
-          <%= link_to "Salud","#", class: "btn btn-primary btn-homepage px-5 "%>
+<div class="homepage-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1548110579-526dc051a76b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80);">
+  <div class="d-flex align-items-center banner-content">
+    <div class="p-5 bg-white homepage-form">
+      <h2>Encontrá nuestros servicios de Beldom</h2>
+      <p>Descubrí servicios de belleza que se adaptan a todo tipo de personas.</p>
+      <form>
+        <div class="form-group ">
+          <label for="exampleInputEmail1">Ubicación</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Santiago de Chile">
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group mb-1">
+              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="10/08/2021">
+            </div>
           </div>
-        </div>  
-        <div class="col-6">
-          <div class="text-center">
-            <img src="https://definicion.mx/wp-content/uploads/2015/02/Belleza.jpg" class="img-top" alt="...">  
-            <%= link_to "Belleza","#", class: "btn btn-primary btn-homepage px-5"%>
+          <div class="col-6">
+            <div class="form-group mb-1">
+              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="10/08/2021">
+            </div>
           </div>
         </div>
-      </div>
+        <%= link_to 'Buscar', services_path, class: 'btn btn-primary btn-block mt-4' %>
+      </form>
     </div>
   </div>
-
-
-<div class="container-beldom">
-  <div class="text-center">
-    <img src="https://st.depositphotos.com/2325841/2529/i/950/depositphotos_25293855-stock-photo-multi-ethnic-group-thumbs-up.jpg" class="img-bel" alt="...">
-      <p>En BelDom somos una red de emprendedores dedicados a la salud y belleza,
-       nos especializamos en llevar nuestros servicios a la comodidad de 
-       tu hogar y con la mejor calidad</p>            
-    </div>  
+</div>
+<div class="container">
+  <h1 class="h1 font-weight-bold text-center py-5 mt-5 mb-5">BelDom</h1>
+  <div class="home-container">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ead.unach.cl/wp-content/uploads/2020/07/salud-OMS-e1551914081412.jpg)">
+      <%= link_to "Belleza", services_path(category: "Belleza") %>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://definicion.mx/wp-content/uploads/2015/02/Belleza.jpg)">
+      <%= link_to "Salud", services_path(category: "Salud") %>
+    </div>
   </div>
+  <div class="text-center py-5 mt-5 mb-5">
+   <div class="card-category-1" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://st.depositphotos.com/2325841/2529/i/950/depositphotos_25293855-stock-photo-multi-ethnic-group-thumbs-up.jpg)">
+    </div>
+    <p class="font-weight-bold h5 mt-3 pt-3">En BelDom somos una red de emprendedores dedicados a la salud y belleza,nos especializamos en llevar nuestros servicios a la comodidad de tu hogar y con la mejor calidad</p>
+    <%= link_to "Quienes somos", "#", class: "btn btn-primary mt-4 mb-5"  %>
+ </div>
 </div>
