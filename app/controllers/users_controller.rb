@@ -4,5 +4,8 @@ class UsersController < ApplicationController
     @services = Service.all
     @booking = Booking.all
     authorize @user
+
+    @users = User.all
   end
+
 end
