@@ -19,15 +19,6 @@
       <div class="d-flex justify-content-start">
         <%= link_to 'Volver', services_path, class: "btn btn-outline-secondary" %>
         <% if user_signed_in? %>
-<<<<<<< HEAD
-        <% if policy(@service).edit? %>
-          <%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-outline-secondary  me-md-2" %>
-        <% end %>
-        <% if policy(@service).destroy? %>
-          <%= link_to 'Eliminar servicio', service_path(@service), method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary"  %>
-        <% end %>
-      <% end %>
-=======
           <% if policy(@service).edit? %>
             <%= link_to 'Editar servicio', edit_service_path(@service), class: "btn btn-outline-secondary  me-md-2" %>
           <% end %>
@@ -35,7 +26,6 @@
             <%= link_to 'Eliminar servicio', service_path(@service), method: :delete, data: { confirm: "estas seguro que quieres eliminar el servicio?" }, class: "btn btn-outline-secondary"  %>
           <% end %>
         <% end %>
->>>>>>> master
       </div>
     </div>
     <div class="col-md-5">
@@ -77,12 +67,8 @@
   </div>
 </div>
 </div>
-<<<<<<< HEAD
+
+<br>
 <%= cl_image_tag @service.photo.key, height: 300, width: 400, crop: :fill %>
-=======
 <br>
 
-
-
-
->>>>>>> master

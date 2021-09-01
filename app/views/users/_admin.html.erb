@@ -1,7 +1,7 @@
 <div class="container">
   
   <%= link_to "Crear servicio", new_service_path, class: "btn btn-primary mb-4" %>
-  <p> <strong>Bookings Registrados: </strong><%= Booking.count %></p>
+  <p> <strong>Bookings Registrados: </strong><%= @booking.where(status: "enabled").count %></p>
 
   <table class="table table-striped table-bordered table-hover">
     <thead>
@@ -33,10 +33,26 @@
     </tbody>
   </table>
 
+  <h1 style="font-family: 'Ubuntu Condensed', sans-serif;" class="mb-4">Administración de Perfiles de Usuarios</h1>
 
-
-
-
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Nivel de permiso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td class="v-align-middle">
+            <%= user.email %>
+          </td>
+          <td class="v-align-middle">
+            <%= user.permission_level %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-

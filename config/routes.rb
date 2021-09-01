@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/usuario/:id', to: 'users#show', as: 'usuario'
 
+  get '/booking/:booking_id/completed', to: 'bookings#completed', as: 'completed'
+
   get "/nosotros", to: "pages#nosotros"
   resources :services do
     resources :bookings, only: [:new, :create]
