@@ -1,0 +1,27 @@
+.about-section h1{
+  color:rgb(71, 7, 87);
+}
+.h1{
+  color:rgb(71, 7, 87);
+}
+
+.card-person{
+  display:flex;
+  margin-top:15px;
+  margin-bottom:15px;
+  color: rgb(71, 7, 87);
+}
+
+.avatar{
+  margin-right: 15px;
+}
+
+.column{
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+}
+.container-home{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
