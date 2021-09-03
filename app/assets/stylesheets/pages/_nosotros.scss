@@ -12,15 +12,15 @@
   color: rgb(71, 7, 87);
 }
 
-.avatar{
+.avata {
   margin-right: 15px;
 }
 
-.column{
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2); 
-}
-.container-home{
+//.column{
+//  border-radius: 5px;
+//  box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+//}
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
