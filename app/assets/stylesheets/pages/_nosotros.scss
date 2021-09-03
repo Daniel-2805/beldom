@@ -1,8 +1,17 @@
 .about-section h1{
   color:rgb(71, 7, 87);
+  text-align: center;
+  font-size: 48px;
 }
-.h1{
+
+.about-section h2{
+  font-size: 45px;
   color:rgb(71, 7, 87);
+  text-align: center;
+}
+
+.about-section p{
+  font-size: 18px;
 }
 
 .card-person{
@@ -16,12 +25,20 @@
   margin-right: 15px;
 }
 
-//.column{
-//  border-radius: 5px;
-//  box-shadow: 0 0 15px rgba(0,0,0,0.2); 
-//}
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
