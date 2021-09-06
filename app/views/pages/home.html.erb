@@ -1,44 +1,91 @@
 <div class="homepage-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1548110579-526dc051a76b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80);">
-  <div class="d-flex align-items-center banner-content">
-    <div class="p-5 bg-white homepage-form">
-      <h2>Encontrá nuestros servicios de Beldom</h2>
-      <p>Descubrí servicios de belleza que se adaptan a todo tipo de personas.</p>
-      <form>
-        <div class="form-group ">
-          <label for="exampleInputEmail1">Ubicación</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Santiago de Chile">
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="form-group mb-1">
-              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="10/08/2021">
-            </div>
+  <h1 class="h1 font-weight-bold text-center py-8 mt-8 mb-8">BelDom</h1>
+  <h2 class="h2 font-weight-bold text-center py-3 mt-3 mb-3"> Belleza y Estetica, fácil, al instante y  domicilio</h2>
+</div>
+
+<div class="container-homepage">
+  <h3 class= "h3 font-weight-bold text-center py-8 mt-8 mb-8"> Nuestros servicios </h3> 
+</div>
+
+<div class="container-carrusel"> </div>
+  <div class="row d-flex justify-content-center">  
+    <div class="col-12 col-lg-6">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+        <li data-target="#demo" data-slide-to="4"></li>
+        <li data-target="#demo" data-slide-to="5"></li>
+        </ul>
+ 
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img  src="https://www.3claveles.com/img/cms/barberia2.jpg" class=" img block w-100"  alt="Barberia">
+          <div class= "carousel-caption d-none d-md-block">
+            <h5>Barberia</h5>
+            <p>constamos con corte y tinte ya sea de cabello o barba </p>
           </div>
-          <div class="col-6">
-            <div class="form-group mb-1">
-              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="10/08/2021">
-            </div>
-          </div>
+        </div> 
+      <div class="carousel-item">
+        <img src="https://www.flowww.net/hubfs/Blog_Marta/potenciar-peluqueri%CC%81a.jpg" class=" img block w-100" alt="Peluqueria">
+        <div class= "carousel-caption  d-none d-md-block">
+          <h5>Peluqueria</h5>
+          <p>constamos con corte unisex, a de mas de tratamientos y coloraciones y mas </p>
         </div>
-        <%= link_to 'Buscar', services_path, class: 'btn btn-primary btn-block mt-4' %>
-      </form>
+      </div>
+      <div class="carousel-item">
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/elle-manicura-2021-1609673220.png?resize=640:*" class=" img block w-100" alt="Manicura">
+        <div class= "carousel-caption d-none d-md-block">
+          <h5>Manicura</h5>
+          <p>constamos con especialista pra cada tipo de manicura </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.vix.com/es/sites/default/files/styles/4x3/public/p/pestanas.jpg" class=" img block w-100"  alt="Peluqueria">
+        <div class= "carousel-caption d-none d-md-block">
+          <h5>Pestañas</h5>
+          <p>nos especializamos en diferentes tecnicas para pestañas</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.vix.com/es/sites/default/files/styles/4x3/public/imj/imujer/C/Como-hacer-una-manicura-y-pedicura-perfectas.jpg" class=" img block w-100" alt="Manicura">
+        <div class= "carousel-caption d-none d-md-block">
+          <h5>Pedicura</h5>
+          <p>constamos con especialitas para peducura medica y estetica </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://codigosaludonline.files.wordpress.com/2019/07/codigo-salud-online-tratamientos-de-belleza-1.png" class=" img block w-100" alt="Manicura">
+        <div class= "carousel-caption d-none d-md-block">
+          <h5>Tratamientos</h5>
+          <p>constamos con diversos tratamientos para rostro y corporales </p>
+        </div>
+      </div>
     </div>
+  
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
   </div>
 </div>
-<div class="container">
-  <h1 class="h1 font-weight-bold text-center py-5 mt-5 mb-5">BelDom</h1>
-  <div class="home-container">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ead.unach.cl/wp-content/uploads/2020/07/salud-OMS-e1551914081412.jpg)">
-      <%= link_to "Belleza", services_path(category: "Belleza") %>
+
+<div class="container-home"> 
+  <div class="row d-flex justify-content-center"> 
+    <div class="col-4">
+      <img src=" https://st.depositphotos.com/2325841/2529/i/950/depositphotos_25293855-stock-photo-multi-ethnic-group-thumbs-up.jpg" alt="" class="rounder">
     </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://definicion.mx/wp-content/uploads/2015/02/Belleza.jpg)">
-      <%= link_to "Salud", services_path(category: "Salud") %>
+    <div class="col-4">
+      <p class="font-weight-bold text-center mt-3 pt-3">En BelDom somos una red de emprendedores dedicados a la belleza y Estetica, nos especializamos en llevar nuestros servicios a la comodidad de tu hogar y con la mejor calidad.</p>
     </div>
-  </div>
-  <div class="text-center py-5 mt-5 mb-5">
-   <div class="card-category-1" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://st.depositphotos.com/2325841/2529/i/950/depositphotos_25293855-stock-photo-multi-ethnic-group-thumbs-up.jpg)">
+    <div class="col-4">
+      <%= link_to "Quienes somos", nosotros_path , class: "btn btn-primary mt-3 mb-5"%>
     </div>
-    <p class="font-weight-bold h5 mt-3 pt-3">En BelDom somos una red de emprendedores dedicados a la salud y belleza,nos especializamos en llevar nuestros servicios a la comodidad de tu hogar y con la mejor calidad</p>
-    <%= link_to "Quienes somos", "#", class: "btn btn-primary mt-4 mb-5"  %>
- </div>
+  </div>    
+</div>
 </div>
