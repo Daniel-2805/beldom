@@ -3,18 +3,20 @@
         <h2 style="font-family: 'Ubuntu Condensed', sans-serif;">Servicios solicitados</h2>
       </div>
     </div>
-    
+        
     <% @user.bookings.each do | booking |%>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card-booking">
-            <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" />
-            <div class="card-booking-infos">
-              <h3><%= link_to booking.service.title, booking_path(booking) %></h2>
-              <p><strong>Inicio de Servicio:</strong> <%= booking.start_date.strftime("Dia: %m/%d/%Y hora: %I:%M%p") %></p>
-              <p><strong>Fin de Servicio</strong> <%= booking.end_date.strftime("Dia: %m/%d/%Y hora: %I:%M%p") %></p>
+      <% if booking.status == "enabled"%>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card-booking">
+              <%= cl_image_tag booking.service.photo.key, height: 150, width: 150, crop: :fill %>
+              <div class="card-booking-infos">
+                <h3><%= link_to booking.service.title, booking_path(booking) %></h2>
+                <p><strong>Inicio de Servicio:</strong> <%= booking.start_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
+                <p><strong>Fin de Servicio</strong> <%= booking.end_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>  
+      <% end %>  
+    <% end %>
