@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(218, 160, 255);
+  //background: rgb(221, 170, 253);
+  background:#574277 ;
   width: 100%;
-  height: 70px;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,5 +16,9 @@
 }
 
 .logo{
-  height: 65px;
+  height: 80px;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color:white !important;
 }
