@@ -1,6 +1,6 @@
 <div class="banner-services mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1583209814683-c023dd293cc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
   <div class="container text-center">
-    <h1>Nuestros Servicios de Belleza</h1>
+    <h1 class="headings-text" >Nuestros Servicios de Belleza</h1>
   </div>
 </div>
 <div class="container">
@@ -12,7 +12,7 @@
             <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
           </div>
           <div class="card-producto-infos">
-            <h2><%= link_to service.title,  service_path(service)%></h2>
+            <h2 id="service-title"><%= link_to service.title,  service_path(service)%></h2>
             <p><%= service.description[0,159] + "..." %></p>
             <div class="d-flex justify-content-between">
               <div>
