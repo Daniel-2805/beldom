@@ -11,7 +11,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Covid", covid_path, class: "nav-link" %>
+          <%= link_to "Covid-19", covid_path, class: "nav-link" %>
         </li> 
         <li class="nav-item active">
           <%= link_to "Inicio", root_path, class: "nav-link" %>
@@ -33,7 +33,7 @@
         
       <% else %>
         <li class="nav-item active">
-          <%= link_to "Covid", covid_path, class: "nav-link" %>
+          <%= link_to "Covid-19", covid_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Inicio", root_path, class: "nav-link" %>
