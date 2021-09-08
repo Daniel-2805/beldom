@@ -2,7 +2,7 @@
 <div class="container"> 
   <div class="row justify-content-center">
     <div class="col-md-7">
-      <h3><center>Servicio de <%= @service.title %></center></h3>
+      <h3 class="headings-text" ><center>Servicio de <%= @service.title %></center></h3>
       <br>
       <div class="row justify-content-center">
         <div class="col-md-4">
@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-8">
           <div class="p-3 bg-white rounded">      
-            <p><%= @service.description %> </p>
+            <p><%= @service.description %></p>
             <h6>Precio: $ <strong><%= @service.price %></strong>  Rating: <strong></strong></strong><span class="fas fa-star"></span></strong><span class="fas fa-star"></span> </h6>
           </div>
         </div>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="col-md-5">
-      <h3><center>Realizar Reserva</center></h3>
+      <h3 class="headings-text"><center>Realizar Reserva</center></h3>
       <br>
       <div class=" p-5 bg-white rounded "
       <br>
@@ -48,7 +48,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-12">
-      <h3><center>Comentarios</center></h3>
+      <h3 class="headings-text"><center>Comentarios</center></h3>
       <br>
       <% @service.bookings.each do |booking| %>
         <% booking.reviews.each do |review| %>
@@ -68,7 +68,5 @@
 </div>
 </div>
 
-<br>
-<%= cl_image_tag @service.photo.key, height: 300, width: 400, crop: :fill %>
-<br>
+
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/booking/:booking_id/completed', to: 'bookings#completed', as: 'completed'
 
   get "/nosotros", to: "pages#nosotros"
+  get "/covid", to: "pages#covid"
   resources :services do
     resources :bookings, only: [:new, :create]
   end
