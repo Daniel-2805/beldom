@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.service = @service
     @booking.user = current_user
+    @booking.status = "enabled"
     authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
@@ -22,6 +23,15 @@ class BookingsController < ApplicationController
     @service = @booking.service
     @booking.destroy
     redirect_to service_path(@service)
+  end
+
+  def completed
+    @user = current_user
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "disabled"
+    @booking.save
+    redirect_to usuario_path(@user)
+    authorize @booking 
   end
 
   private

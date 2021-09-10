@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/karina0522/image/upload/v1629298737/beldom_fcib3l.png" %>
+    <%= image_tag "https://res.cloudinary.com/karina0522/image/upload/v1630510182/beldom_white_rsl2b2.png" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,6 +11,9 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
+          <%= link_to "Covid-19", covid_path, class: "nav-link" %>
+        </li> 
+        <li class="nav-item active">
           <%= link_to "Inicio", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
@@ -18,7 +21,7 @@
         </li> 
         <li class="nav-item active">
           <%= link_to "Servicios", services_path, class: "nav-link" %>
-        </li>
+        </li>        
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/karina0522/image/upload/v1629305895/avatar_jnehp7.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -27,7 +30,14 @@
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
+        
       <% else %>
+        <li class="nav-item active">
+          <%= link_to "Covid-19", covid_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Inicio", root_path, class: "nav-link" %>
+        </li>
         <li class="nav-item active">
           <%= link_to "Nosotros", nosotros_path, class: "nav-link" %>
         </li>

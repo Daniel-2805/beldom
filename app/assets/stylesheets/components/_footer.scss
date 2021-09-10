@@ -1,5 +1,5 @@
 .footer {
-  background:rgb(135, 159, 209);
+  background:#574277;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,7 +15,8 @@
   align-items: center;
 }
 .footer-links a {
-  color: rgb(35, 7, 87);
+  //color: rgb(35, 7, 87);
+  color: white;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -26,4 +27,7 @@
 }
 .footer .fa-heart {
   color: rgb(35, 7, 87);
+}
+.footer-copyright {
+  color: white;
 }

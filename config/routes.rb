@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 
   get '/usuario/:id', to: 'users#show', as: 'usuario'
 
+  get '/usuario/:id/admin', to: 'users#admin', as: 'admin'
+  get '/usuario/:id/owner', to: 'users#owner', as: 'owner'
+  get '/usuario/:id/buyer', to: 'users#buyer', as: 'buyer'
+
+  get '/booking/:booking_id/completed', to: 'bookings#completed', as: 'completed'
+
   get "/nosotros", to: "pages#nosotros"
+  get "/covid", to: "pages#covid"
   resources :services do
     resources :bookings, only: [:new, :create]
   end
