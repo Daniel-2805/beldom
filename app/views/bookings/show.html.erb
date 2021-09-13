@@ -4,7 +4,7 @@
 
       <div class="col-lg-6 col-sm-12 mt-5">
         <div class="banner-booking mt-5 sm-5">
-          <h1 class="text-center" style="font-family: Dancing Script;">Tu servicio esta reservado</h1> 
+          <h1 class="text-center" style="font-family: Dancing Script">Tu servicio esta reservado</h1> 
           <p style="font-family: Dancing Script"><strong>Hora de entrada:</strong> <%= @booking.start_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
           <p style="font-family: Dancing Script"><strong>Hora de salida</strong> <%= @booking.end_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
           <p style="font-family: Dancing Script"><strong>Dirección</strong> <%= @booking.address_client %></p>         
@@ -14,7 +14,7 @@
 
       <div class="col-lg-6 col-sm-12 mt-5">
         <div class="banner-booking mt-5 sm-5">
-          <h1 class="text-center letra" style="font-family: Dancing Script;">Dejanos tus comentarios</h1> 
+          <h1 class="text-center" style="font-family: Dancing Script" >Dejanos tus comentarios</h1> 
           <%= simple_form_for [@booking, @review] do |f| %>
           <%= f.input :content %>
           <%= f.input :rating %>
