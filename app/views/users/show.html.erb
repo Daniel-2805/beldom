@@ -1,7 +1,7 @@
 <div class="container mt-5 mb-5 pb-5"> 
   <div class="d-flex justify-content-between align-items-center">
-    <h1 style="font-family: 'Ubuntu Condensed', sans-serif;" class="mb-4 , headings-text">Agenda de servicios</h1>
-    <p><strong>Bienvenido:</strong> <%= @user.email %> </p>
+    <h1 style="font-family: 'Ubuntu Condensed', sans-serif;" class="mb-4">Agenda de servicios</h1>
+    <p><strong>Bienvenid@:</strong> <%= @user.email %> --> <%= current_user.permission_level %> </p>
   </div>
 
   <% if current_user.permission_level == "owner" %>

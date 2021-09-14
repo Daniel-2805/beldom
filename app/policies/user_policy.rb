@@ -9,6 +9,9 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def search?
+    true
+  end
   def admin?
     true
   end
