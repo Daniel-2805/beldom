@@ -12,3 +12,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+@import 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap';
+
+h1{
+font-family: 'Dancing Script', cursive;
+}
+h2{
+font-family: 'Dancing Script', cursive;
+}
+
+.headings-text{
+  color:rgb(71, 7, 87);
+}

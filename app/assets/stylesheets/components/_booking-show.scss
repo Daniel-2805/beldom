@@ -1,9 +1,39 @@
+
 .container-show{
-	margin-bottom: 150px;
-	h1{
-		font-size: 50px;
-		line-height: 1.5;
-	}
-
-
+  margin-bottom: 150px;
+  h1{
+   font-size: 48px;
+   line-height: 1.5;
+   color:rgb(71, 7, 87);
+   font-family: 'Dancing Script',cursive !important;
+  }
+  .banner-booking{
+    background-color: rgb(252, 251, 250);
+    height: 800;
+    width: 600;
+    padding: 20px; 
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media (max-width:375px){
+  .banner-booking{
+  margin:auto !important;
+  justify-content: center;
+  }
+   h1{
+   font-size: 50px;
+   line-height: 1.5;
+   color:rgb(71, 7, 87);
+   font-family: 'Dancing Script',cursive !important;
+  }
+  p{
+    font-family: 'Dancing Script',cursive;
+  }
+  
+}
+.letra{
+  font-family: 'Dancing Script',cursive;
 }

@@ -12,4 +12,16 @@ class UserPolicy < ApplicationPolicy
   def search?
     true
   end
+  def admin?
+    true
+  end
+
+  def owner?
+    true
+  end
+
+  def buyer?
+    true
+  end
+
 end

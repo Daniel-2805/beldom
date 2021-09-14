@@ -4,11 +4,18 @@ Rails.application.routes.draw do
 
   get '/usuario/:id', to: 'users#show', as: 'usuario'
 
+<<<<<<< HEAD
   get "/usuario/:id/search", to: "users#search"
+=======
+  get '/usuario/:id/admin', to: 'users#admin', as: 'admin'
+  get '/usuario/:id/owner', to: 'users#owner', as: 'owner'
+  get '/usuario/:id/buyer', to: 'users#buyer', as: 'buyer'
+>>>>>>> master
 
   get '/booking/:booking_id/completed', to: 'bookings#completed', as: 'completed'
 
   get "/nosotros", to: "pages#nosotros"
+  get "/covid", to: "pages#covid"
   resources :services do
     resources :bookings, only: [:new, :create]
   end

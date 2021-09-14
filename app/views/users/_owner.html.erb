@@ -20,6 +20,28 @@
                 <p><strong>Inicio de Servicio:</strong> <%= booking.start_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
                 <p><strong>Fin de Servicio:</strong> <%= booking.end_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
                 <%= link_to "Finalizar Servicio", completed_path(booking.id), data: { confirm: "Esta seguro de finalizar el servicio?" } %>
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 style="font-family: 'Ubuntu Condensed', sans-serif;" class="headings-text">Servicios Agendados</h2>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <h2 style="font-family: 'Ubuntu Condensed', sans-serif;" class="headings-text">Ubicacion del cliente</h2>
+      </div>
+    </div>
+    
+    <% @user.services.each do |c| %>
+      <% c.bookings.each do |booking| %>
+        <% if booking.status == "enabled" %>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card-booking" >
+                <%= cl_image_tag booking.service.photo.key, height: 150, width: 150, crop: :fill %>
+                <div class="card-booking-infos">
+                  <h3 class="headings-text"><%= booking.service.title %></h2>
+                  <p><strong>Inicio de Servicio:</strong> <%= booking.start_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
+                  <p><strong>Fin de Servicio</strong> <%= booking.end_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
+                  <p><%= link_to "Finalizar Servicio", completed_path(booking.id), data: { confirm: "Esta seguro de finalizar el servicio?" } %></p>
+                </div>
               </div>
             </div>
           </div>
