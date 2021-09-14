@@ -30,11 +30,14 @@ import "bootstrap";
 
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initMapbox } from '../plugins/init_mapbox';
+import { userMapbox } from '../plugins/user_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlatpickr();
   initAutocomplete();
+  initMapbox();
 });
 

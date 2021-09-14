@@ -6,8 +6,10 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :address_client, presence: true
-
   validate :end_date_is_after_start_date
+
+  geocoded_by :address_client
+  after_validation :geocode, if: :will_save_change_to_address_client?
 
   private
   
@@ -15,7 +17,7 @@ class Booking < ApplicationRecord
     return if end_date.blank? || start_date.blank?
   
     if end_date < start_date
-      errors.add(:end_date, "cannot be before the start date") 
+      errors.add(:end_date, "no puede ser antes de la fecha de inicio") 
     end 
   end
 end

@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   def home
     @services = Service.all
   end
-   def nosotros
-   end
+
+  def nosotros
+  end
+
 end
