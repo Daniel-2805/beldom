@@ -1,22 +1,50 @@
 
-
-    <h2 style="font-family: 'Ubuntu Condensed', sans-serif;" class= "headings-text">Servicios solicitados</h2>
+<div class="container">  
+        <h2 style="font-family: 'Ubuntu Condensed', sans-serif;" class= "headings-text">Servicios Solicitados Pendientes de Pago</h2>
         <% @user.bookings.each do | booking |%>
           <% if booking.status == "enabled"%>
             <div class="row justify-content-center">
               <div class="col-12 col-lg-7 col-sm-12">
                 <div class="card-booking">
-                  <%= cl_image_tag booking.service.photo.key, height: 150, width: 150, crop: :fill %>
+                  <%= cl_image_tag booking.service.photo.key, height: 140, width: 140, crop: :fill %>
                   <div class="card-booking-infos">
                     <h3><%= link_to booking.service.title, booking_path(booking) %></h2>
                     <p><strong>Inicio de Servicio:</strong> <%= booking.start_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
                     <p><strong>Fin de Servicio</strong> <%= booking.end_date.strftime("Dia: %d/%m/%Y hora: %I:%M%p") %></p>
+                   
+                    <!-- Button trigger modal -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <p> <strong>Confirme su reserva realizando el proceso de: <strong>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      Pago Electrónico
+                    </button></p>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Proceso de Pago Electrónico</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>                      
+                          <div class="modal-body">
+                            <h5>Aqui se establece el proceso de Pago electrónico 
+                               el cual incorporara algunos prestadores de este
+                               servicio en Chile.</h5>           
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
               </div>
             </div>
           <% end %>  
         <% end %>
-   
-        
+</div>
+
