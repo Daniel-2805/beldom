@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       { lat: booking.latitude, lng: booking.longitude }
     end
     authorize @user
+    @users = User.all
   end
   
   def admin
