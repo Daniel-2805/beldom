@@ -12,7 +12,7 @@
             <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
           </div>
           <div class="card-producto-infos">
-            <h2 id="service-title"><%= link_to service.title,  service_path(service)%></h2>
+            <h2 id="service-title" ><%= link_to service.title,  service_path(service)%></h2>
             <p><%= service.description[0,159] + "..." %></p>
             <div class="d-flex justify-content-between">
               <div>
